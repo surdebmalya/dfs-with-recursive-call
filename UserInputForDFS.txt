@@ -1,0 +1,25 @@
+#User input
+nodes=['A','B','C','D','E','F','G','H','I','J']
+print(" There Are 10 Nodes Named 'A' To 'J'")
+#initialList=list(range(9,46)) ###
+initialList=[5]
+numberOfEdges=random.choice(initialList)
+print(" Randomly Generated Number For Edges Is: ",numberOfEdges)
+graph={}
+
+while(numberOfEdges!=0):
+    node=input(" Enter The Starting Node: ")
+    if node not in graph.keys():
+        graph[node]=[]
+    isThereAdjacentNodes='y'
+    count=0
+    while(isThereAdjacentNodes=='y' and numberOfEdges!=0):
+        print(" Remaining Number Of Edges: ",numberOfEdges)
+        numberOfEdges-=1
+        count+=1
+        tempAdjacentNode=input(" {} Adjacent Node Of {}: ".format(count,node))
+        graph[node]+=[tempAdjacentNode]
+        if numberOfEdges!=0:
+            isThereAdjacentNodes=input(" If {} Still Has Adjaceny Nodes Then Enter 'y', Otherwise Press Any Key: ".format(node))
+print(graph) #Worked Properly
+#
